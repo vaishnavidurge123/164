@@ -1,33 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Simple Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Mitra</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="calculator">
-        <h1>Simple Calculator</h1>
+    <header>
+        <h1>🌾 Kisan Mitra</h1>
+        <p>Smart Agriculture Assistant for Farmers</p>
+    </header>
 
-        <input type="number" id="num1" placeholder="Enter first number">
+    <div class="container">
 
-        <select id="operator">
-            <option value="+">Addition (+)</option>
-            <option value="-">Subtraction (-)</option>
-            <option value="*">Multiplication (*)</option>
-            <option value="/">Division (/)</option>
-        </select>
+        <div class="welcome-card">
+            <h2>Welcome Farmer 👨‍🌾</h2>
 
-        <input type="number" id="num2" placeholder="Enter second number">
+            <p>
+                Get guidance on crop health,
+                fertilizers, irrigation,
+                pest control and farming practices.
+            </p>
+        </div>
 
-        <br>
-        <button onclick="calculate()">Calculate</button>
-        <button onclick="clearData()">Clear</button>
+        <div class="features">
 
-        <h2 id="result">Result:</h2>
+            <div class="feature-box">
+                🌱 Crop Guidance
+            </div>
+
+            <div class="feature-box">
+                🐛 Pest Control
+            </div>
+
+            <div class="feature-box">
+                📸 Disease Detection
+            </div>
+
+            <div class="feature-box">
+                🚜 Farming Support
+            </div>
+
+        </div>
+
+        <div class="chat-section">
+
+            <div id="chatBox">
+
+                <div class="bot">
+                    🤖 Hello Farmer! Ask me any farming-related question and I will help you.
+                </div>
+
+            </div>
+
+            <div class="upload-section">
+
+                <h3>📸 Upload Crop Image</h3>
+
+                <input
+                    type="file"
+                    id="cropImage"
+                    accept="image/*">
+
+                <img
+                    id="preview"
+                    alt="Crop Preview">
+
+                <br>
+
+                <button onclick="analyzeImage()">
+                    🔍 Analyze Crop
+                </button>
+
+            </div>
+
+            <textarea
+                id="question"
+                placeholder="Ask your farming question here..."
+            ></textarea>
+
+            <div class="btn-group">
+
+                <button onclick="startVoice()">
+                    🎤 Speak
+                </button>
+
+                <button onclick="askAI()">
+                    🌾 Get Farming Advice
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
