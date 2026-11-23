@@ -1,106 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kisan Mitra</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisan Mitra Login</title>
 
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <header>
-        <h1>🌾 Kisan Mitra</h1>
-        <p>Smart Agriculture Assistant for Farmers</p>
-    </header>
+<div class="login-container">
 
-    <div class="container">
+    <h1>🌾 Kisan Mitra</h1>
 
-        <div class="welcome-card">
-            <h2>Welcome Farmer 👨‍🌾</h2>
+    <h2>Admin Login</h2>
 
-            <p>
-                Get guidance on crop health,
-                fertilizers, irrigation,
-                pest control and farming practices.
-            </p>
-        </div>
+    <input
+    type="text"
+    id="username"
+    placeholder="Username">
 
-        <div class="features">
+    <input
+    type="password"
+    id="password"
+    placeholder="Password">
 
-            <div class="feature-box">
-                🌱 Crop Guidance
-            </div>
+    <button onclick="login()">
+        Login
+    </button>
 
-            <div class="feature-box">
-                🐛 Pest Control
-            </div>
+    <p id="message"></p>
 
-            <div class="feature-box">
-                📸 Disease Detection
-            </div>
+</div>
 
-            <div class="feature-box">
-                🚜 Farming Support
-            </div>
+<script>
 
-        </div>
+function login(){
 
-        <div class="chat-section">
+    const username =
+    document.getElementById(
+    "username"
+    ).value;
 
-            <div id="chatBox">
+    const password =
+    document.getElementById(
+    "password"
+    ).value;
 
-                <div class="bot">
-                    🤖 Hello Farmer! Ask me any farming-related question and I will help you.
-                </div>
+    if(
+        username === "admin" &&
+        password === "admin123"
+    ){
 
-            </div>
+        localStorage.setItem(
+        "loggedIn",
+        "true"
+        );
 
-            <div class="upload-section">
+        window.location.href =
+        "dashboard.html";
+    }
 
-                <h3>📸 Upload Crop Image</h3>
+    else{
 
-                <input
-                    type="file"
-                    id="cropImage"
-                    accept="image/*">
+        document.getElementById(
+        "message"
+        ).innerText =
+        "Invalid Username or Password";
+    }
+}
 
-                <img
-                    id="preview"
-                    alt="Crop Preview">
-
-                <br>
-
-                <button onclick="analyzeImage()">
-                    🔍 Analyze Crop
-                </button>
-
-            </div>
-
-            <textarea
-                id="question"
-                placeholder="Ask your farming question here..."
-            ></textarea>
-
-            <div class="btn-group">
-
-                <button onclick="startVoice()">
-                    🎤 Speak
-                </button>
-
-                <button onclick="askAI()">
-                    🌾 Get Farming Advice
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
+</script>
 
 </body>
-
 </html>
